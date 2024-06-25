@@ -50,7 +50,7 @@ $$
 
 True for $\delta > 0$ and all $w$. Here $\| \cdot \|_F$ represents the Frobenius norm.
 
-## 题目要求
+## Question requirements
 
 1. For gradient descent, it is proved that if the spectral norm of ∑ is satisfied:
 
@@ -65,3 +65,5 @@ So gradient descent is locally stable (i.e. $\text{Loss}(w)$ is bounded for all 
 $$
 \| \Sigma \|_F \leq \sqrt{\frac{b/ \delta }{s}}
 $$
+
+## Solve answer
