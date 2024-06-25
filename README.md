@@ -3,7 +3,7 @@ Question 2：
 ![](picture/Prove_gradientDescent_locallyStable.jpg)
 对于github：
 1. $公式在有逗号后面的的情况下不能被渲染
-2. “双”$符合后面跟斜杆的不能被渲染，“单”$可以
+2. $符合后面跟斜杆的不能被渲染
 3. 注意w^\star 不是六角的*
 # Question 2：Deep neural network gradient descent method and random gradient descent method analysis
 
@@ -12,7 +12,7 @@ Question 2：
 
 hypothesis $F(x; w)$ is a deep neural network with output scalars，where $x$ is the input and $ w $ represents the weight. Let $F$ be continuously differentiable with respect to $w$ , and for training data $(x_j, y_j)_{j=1}^m$ is over-parameterized : There exists $w^\star$ such that for all j, $F(x_j, w^\star) = y_i$. In order to study the local optimization dynamics at w* when training neural networks, we consider linearized neural networks 
 $$ 
-\tilde{F}(x; w) 
+\tilde{F}
 $$
 , its the Loss function $\text{Loss}(w)$:
 
