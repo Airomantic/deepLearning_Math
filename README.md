@@ -5,6 +5,7 @@ Question 2：
 1. $公式在有逗号后面的的情况下不能被渲染
 2. $符合后面跟斜杆的不能被渲染
 3. 注意w^\star 不是六角的*
+4. $与公式不要有间隔
 # Question 2：Deep neural network gradient descent method and random gradient descent method analysis
 
 ## Problem overview
@@ -57,9 +58,9 @@ $$
 \| \Sigma \|_2 \leq \frac{2}{s}
 $$
 
-So gradient descent is locally stable (i.e. $\text{Loss}(w) $ is bounded for all $i $). 注意这里的i.e 是对于所有的i
+So gradient descent is locally stable (i.e. $\text{Loss}(w)$ is bounded for all $i $). 注意这里的i.e 是对于所有的i
 
-2. For the stochastic gradient descent method, assuming that $\text{Loss}(w) $ is bounded for all $i $, the following inequality must hold:
+2. For the stochastic gradient descent method, assuming that $\text{Loss}(w)$ is bounded for all $i $, the following inequality must hold:
 
 $$
 \| \Sigma \|_F \leq \sqrt{\frac{b/ \delta }{s}}
