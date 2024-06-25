@@ -67,12 +67,13 @@ $$
 $$
 
 ## Solve answer
-The loss curve gradually decreases and becomes stable (approaching to a fixed value), which indicates that the GD method is locally stable.
+
+(1) The loss curve gradually decreases and becomes stable (approaching to a fixed value), which indicates that the GD method is locally stable.
 As shown by the blue line in the below figure
 ![](picture/gradient_loss.png)
 Stochastic Gradient Descent (SGD), although the loss curve may fluctuate (due to the introduction of random noise), the overall trend should be to decrease and level off，as shown in the red curve in the above figure.
 
-要证明第二小问中关于随机梯度下降（SGD）的条件，需要分析并验证那个不等式
+(2) 要证明第二小问中关于随机梯度下降（SGD）的条件，需要分析并验证那个不等式
 
 $\| \Sigma \|_F$ is the Frobenius norm of the matrix Σ.
 
@@ -82,4 +83,4 @@ $\delta$ Delta  is a positive number that represents the conditions given in the
 
 s is the learning rate.
 
-
+![](picture/inequalitHolds_sigmaFrobenius.png)
