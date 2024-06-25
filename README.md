@@ -37,7 +37,7 @@ $b$ is the size of the mini-batch.
 Suppose the method matrix $M$ is:
 
 $$
-\Sigma = \frac{1}{m} \sum_{j=1}^m \nabla\ F(x_j, w^*) \nabla\ F(x_j, w^*)^T
+\Sigma = \frac{1}{m} \sum_{j=1}^m \nabla
 $$
 
 Aligned in the following sense:
