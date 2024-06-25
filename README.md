@@ -1,46 +1,65 @@
 
 Question 2：
 ![](picture/Prove_gradientDescent_locallyStable.jpg)
-
+对于github：
+1. $公式在有逗号后面的的情况下不能被渲染
+2. “双”$符合后面跟斜杆的不能被渲染，“单”$可以
 # Question 2：Deep neural network gradient descent method and random gradient descent method analysis
 
 ## Problem overview
-```math
-假设 \( F(x; w) \) 是一个输出标量的深度神经网络，其中 \( x \) 是输入，\( w \) 表示权重。设 \( F \) 关于 \( w \) 连续可微，并且对于训练数据 \( (x_j, y_j)_{j=1}^m \) 进行最小化损失函数 \( \text{Loss}(w) \):
+# 问题2：深度神经网络的梯度下降法和随机梯度下降法分析
 
-\[ \text{Loss}(w) := \frac{1}{2m} \sum_{j=1}^m (y_j - \hat{y}_j(w))^2 \]
+hypothesis $F(x; w)$ is a deep neural network with output scalars，where $x$ is the input and $ w $ represents the weight. Let $F$ be continuously differentiable with respect to $w$ , and for training data $(x_j, y_j)_{j=1}^m$ to minimize the Loss function $\text{Loss}(w)$:
 
-其中 \( \hat{y}_j(w) = F(x_j; w) \)。
+$$
+\text{Loss}(w) := \frac{1}{2m} \sum_{j=1}^m (y_j - \hat{y}_j(w))^2
+$$
 
-定义梯度下降法更新规则：
+where $\hat{y}_j(w) = F(x_j; w)$。
 
-\[ w_{i+1} = w_i - s \nabla \text{Loss}(w_i) \]
+Define the gradient descent update rule:
 
-以及随机梯度下降法更新规则：
+$$
+w_{i+1} = w_i - s \nabla \text{Loss}(w_i)
+$$
 
-\[ w_{i+1} = w_i - s (\nabla \text{Loss}(w_i) + \epsilon_i) \]
+And random gradient descent update rules:
 
-其中，\(\epsilon_i\) 是噪声项，假设 \( E[\epsilon_i] = 0 \) 和 \( E[\epsilon_i \epsilon_i^T] = M(w_i) / b \)，这里 \( b \) 是 mini-batch 的大小。
+$$
+w_{i+1} = w_i - s (\nabla \text{Loss}(w_i) + \epsilon_i)
+$$
 
-假设方法矩阵 \( M \) 为：
+Where $\epsilon_i$ is the noise term, assuming 
+$E\epsilon_i = 0$
+and $E\epsilon_i \epsilon_i^T = M(w_i)/b$, where 
+$b$ is the size of the mini-batch.
 
-\[ \Sigma = \frac{1}{m} \sum_{j=1}^m \nabla F(x_j, w^*) \nabla F(x_j, w^*)^T \]
+Suppose the method matrix $M$ is:
 
-在以下意义上对齐：
+$$
+\Sigma = \frac{1}{m} \sum_{j=1}^m \nabla F(x_j, w^*) \nabla F(x_j, w^*)^T
+$$
 
-\[ \frac{\text{Tr}(M(w) \Sigma)}{2 \text{Loss}(w) \| \Sigma \|_F^2} \geq \delta \]
+Aligned in the following sense:
 
-对于 \( \delta > 0 \) 和所有 \( w \) 成立。这里 \( \| \cdot \|_F \) 表示 Frobenius 范数。
+$$
+\frac{\text{Tr}(M(w) \Sigma)}{2 \text{Loss}(w) \| \Sigma \|_F^2} \geq \delta
+$$
+
+True for $\delta > 0$ and all $w$. Here $\| \cdot \|_F$ represents the Frobenius norm.
 
 ## 题目要求
 
-1. 对于梯度下降法，证明如果 \( 2\delta \) 适当选择，则：
+1. For gradient descent, it is proved that if the spectral norm of ∑ is satisfied:
 
-\[ \| \epsilon_i \|_2 \leq \frac{s}{2} \]
+$$
+\| \Sigma \|_2 \leq \frac{2}{s}
+$$
 
-那么梯度下降是局部稳定的（即对所有 \( i \)，\(\text{Loss}(w_i)\) 是有界的）。
+So gradient descent is locally stable (i.e. $\ {Loss} (w_i) $ is bounded for all $i $). 注意这里的i.e 是对于所有的i
 
-2. 对于随机梯度下降法，假设 \( \text{Loss}(w_i) \) 对所有 \( i \) 有界，则以下不等式必须成立：
+2. For the stochastic gradient descent method, assuming that $\ {Loss} (w_i) $ is bounded for all $i $, the following inequality must hold:
 
-\[ \| \epsilon_i \|_F \leq \sqrt{\frac{b}{s}} \]
-```
+$$
+\| \Sigma \|_F \leq \sqrt{\frac{b/ \delta }{s}}
+$$
