@@ -57,9 +57,9 @@ $$
 \| \Sigma \|_2 \leq \frac{2}{s}
 $$
 
-So gradient descent is locally stable (i.e. $Loss(w_i) $ is bounded for all $i $). 注意这里的i.e 是对于所有的i
+So gradient descent is locally stable (i.e. $\text{Loss}(w) $ is bounded for all $i $). 注意这里的i.e 是对于所有的i
 
-2. For the stochastic gradient descent method, assuming that $Loss(w_i) $ is bounded for all $i $, the following inequality must hold:
+2. For the stochastic gradient descent method, assuming that $\text{Loss}(w) $ is bounded for all $i $, the following inequality must hold:
 
 $$
 \| \Sigma \|_F \leq \sqrt{\frac{b/ \delta }{s}}
