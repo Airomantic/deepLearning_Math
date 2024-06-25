@@ -11,8 +11,8 @@ Question 2：
 # 问题2：深度神经网络的梯度下降法和随机梯度下降法分析
 
 hypothesis $F(x; w)$ is a deep neural network with output scalars，where $x$ is the input and $ w $ represents the weight. Let $F$ be continuously differentiable with respect to $w$ , and for training data $(x_j, y_j)_{j=1}^m$ is over-parameterized : There exists $w^\star$ such that for all j, $F(x_j, w^\star) = y_i$. In order to study the local optimization dynamics at w* when training neural networks, we consider linearized neural networks 
-$$ 
-(x; w) = F(x; w^\star ) + (w - w^\star ) ^ T \nabla F(x; w)
+$$
+\text{Loss}(w) := \frac{1}{2m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w))^2
 $$
 , its the Loss function $\text{Loss}(w)$:
 
