@@ -67,3 +67,8 @@ $$
 $$
 
 ## Solve answer
+The loss curve gradually decreases and becomes stable (approaching to a fixed value), which indicates that the GD method is locally stable.
+As shown by the blue line in the below figure
+![](picture/gradient_loss.png)
+Stochastic Gradient Descent (SGD), although the loss curve may fluctuate (due to the introduction of random noise), the overall trend should be to decrease and level off，as shown in the red curve in the above figure.
+
