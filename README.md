@@ -5,7 +5,7 @@ Question 2：
 # Question 2：Deep neural network gradient descent method and random gradient descent method analysis
 
 ## Problem overview
-
+```math
 假设 \( F(x; w) \) 是一个输出标量的深度神经网络，其中 \( x \) 是输入，\( w \) 表示权重。设 \( F \) 关于 \( w \) 连续可微，并且对于训练数据 \( (x_j, y_j)_{j=1}^m \) 进行最小化损失函数 \( \text{Loss}(w) \):
 
 \[ \text{Loss}(w) := \frac{1}{2m} \sum_{j=1}^m (y_j - \hat{y}_j(w))^2 \]
@@ -43,3 +43,4 @@ Question 2：
 2. 对于随机梯度下降法，假设 \( \text{Loss}(w_i) \) 对所有 \( i \) 有界，则以下不等式必须成立：
 
 \[ \| \epsilon_i \|_F \leq \sqrt{\frac{b}{s}} \]
+```
