@@ -76,16 +76,15 @@ Stochastic Gradient Descent (SGD), although the loss curve may fluctuate (due to
 Specific solution steps：
 
 Objective: Prove that if 
-$$\| \Sigma \|_2 \leq \frac{2}{s},$$ 
+$\| \Sigma \|_2 \leq \frac{2}{s},$
 then gradient descent is locally stable (i.e., 
 $\text{Loss}(w)$ is bounded for all $i$).
 
 Proof:
 
 The gradient of the loss function $\text{Loss}(w)$ is:
-$$
-\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w)) \nabla \tilde{F}(x_j; w)
-$$
+
+$$\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w)) \nabla \tilde{F}(x_j; w)$$
 
 For the linearized network $\tilde{F}$, the gradient becomes:
 $$
