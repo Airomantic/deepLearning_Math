@@ -76,66 +76,45 @@ Stochastic Gradient Descent (SGD), although the loss curve may fluctuate (due to
 Specific solution steps：
 
 Objective: Prove that if 
-$$\| \Sigma \|_2 \leq \frac{2}{s},$$ 
+$\| \Sigma \|_2 \leq \frac{2}{s},$
 then gradient descent is locally stable (i.e., 
 $\text{Loss}(w)$ is bounded for all $i$).
 
 Proof:
 
 The gradient of the loss function $\text{Loss}(w)$ is:
-$$
-\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w)) \nabla \tilde{F}(x_j; w)
-$$
+
+$$\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w)) \nabla \tilde{F}(x_j; w)$$
 
 For the linearized network $\tilde{F}$, the gradient becomes:
-$$
-\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m \left( y_j - \left[ F(x_j; w^\star) + (w - w^\star)^T \nabla F(x_j; w^\star) \right] \right) \nabla F(x_j; w^\star)
-$$
+$$\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m \left( y_j - \left[ F(x_j; w^\star) + (w - w^\star)^T \nabla F(x_j; w^\star) \right] \right) \nabla F(x_j; w^\star)$$
 
 Using $y_j = F(x_j; w^\star)$:
-$$
-\nabla \text{Loss}(w) = -\frac{1}{m} \sum_{j=1}^m \left( (w - w^\star)^T \nabla F(x_j; w^\star) \right) \nabla F(x_j; w^\star)
-$$
+$$\nabla \text{Loss}(w) = -\frac{1}{m} \sum_{j=1}^m \left( (w - w^\star)^T \nabla F(x_j; w^\star) \right) \nabla F(x_j; w^\star)$$
 
 Let $g(w) = w - w^\star$, then:
-$$
-\nabla \text{Loss}(w) = -\Sigma g(w)
-$$
+$$\nabla \text{Loss}(w) = -\Sigma g(w)$$
 
 The update rule for gradient descent is:
-$$
-w_{i+1} = w_i - s \nabla \text{Loss}(w_i)
-$$
+$$w_{i+1} = w_i - s \nabla \text{Loss}(w_i)$$
 
 Substitute $\nabla \text{Loss}(w)$:
-$$
-w_{i+1} = w_i + s \Sigma g(w_i)
-$$
+$$w_{i+1} = w_i + s \Sigma g(w_i)$$
 
 Let $g_i = w_i - w^\star$:
-$$
-g_{i+1} = g_i + s \Sigma g_i
-$$
+$$g_{i+1} = g_i + s \Sigma g_i$$
 
 The dynamics of the system can be described by the eigenvalues of $s\Sigma$. For the system to be stable, the spectral radius of $I + s\Sigma$ must be less than 1. This implies that:
-$$
-\| I + s\Sigma \|_2 < 1
-$$
+$$\| I + s\Sigma \|_2 < 1$$
 
 Since $\| \Sigma \|_2 \leq \frac{2}{s}$:
-$$
-\| s\Sigma \|_2 \leq 2
-$$
+$$\| s\Sigma \|_2 \leq 2$$
 
 Thus:
-$$
-\| I + s\Sigma \|_2 \leq 1 + \| s\Sigma \|_2 \leq 1 + 2 = 3
-$$
+$$\| I + s\Sigma \|_2 \leq 1 + \| s\Sigma \|_2 \leq 1 + 2 = 3$$
 
 For local stability:
-$$
-\| I + s\Sigma \|_2 < 1
-$$
+$$\| I + s\Sigma \|_2 < 1$$
 
 This contradicts our previous result, implying a need to reconsider the bound or an alternative approach.
 
