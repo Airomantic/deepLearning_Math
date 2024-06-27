@@ -87,6 +87,7 @@ The gradient of the loss function $\text{Loss}(w)$ is:
 $$\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w)) \nabla \tilde{F}(x_j; w)$$
 
 For the linearized network $\tilde{F}$, the gradient becomes:
+
 代入线性神经网络$\tilde{F}(x; w) = F(x; w^\star ) + (w - w^\star ) ^ T \nabla F(x; w)$的目的是整体系统中观察各部分参数对loss函数的影响。
 $$\nabla \text{Loss}(w) = \frac{1}{m} \sum_{j=1}^m \left( y_j - \left[ F(x_j; w^\star) + (w - w^\star)^T \nabla F(x_j; w^\star) \right] \right) \nabla F(x_j; w^\star)$$
 
