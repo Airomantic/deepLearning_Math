@@ -17,7 +17,7 @@ $$
 \text{Loss}(w) := \frac{1}{2m} \sum_{j=1}^m (y_j - \tilde{F}(x_j; w))^2
 $$
 
-where $\hat{y}_j(w) = F(x_j; w)$。
+~~where $\hat{y}_j(w) = F(x_j; w)$ this part can be omitted~~, Let s represent the learning rate.
 
 Define the gradient descent update rule:
 
